@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Push-to-Talk App</title>
+</head>
+<body>
+  <h1>Push-to-Talk App</h1>
+
+  <div>
+    <label for="channelInput">Enter Channel:</label>
+    <input type="text" id="channelInput" />
+    <button onclick="joinChannel()">Join Channel</button>
+  </div>
+
+  <div>
+    <h2>Users in Channel:</h2>
+    <ul id="userList"></ul>
+  </div>
+
+  <div>
+    <button id="pushToTalkButton">Push to Talk</button>
+    <!-- <button id="startTalk" onclick="startAudio()">Start to talk</button>
+    <button id="stopTalk" onclick="stopAudio()">Stop to talk</button> -->
+  </div>
+
+  <script src="https://cdn.socket.io/4.7.4/socket.io.min.js" integrity="sha384-Gr6Lu2Ajx28mzwyVR8CFkULdCU7kMlZ9UthllibdOSo6qAiN+yXNHqtgdTvFXMT4" crossorigin="anonymous"></script>
+  <script src="app.js"></script>
+</body>
+</html>
