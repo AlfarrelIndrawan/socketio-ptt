@@ -1,4 +1,4 @@
-const socket = io("http://192.168.0.168:3000");
+const socket = io("http://localhost:3000");
 
 let audioStream;
 let audioContext;
@@ -28,7 +28,7 @@ async function togglePushToTalk() {
 document.getElementById('pushToTalkButton').addEventListener('click', togglePushToTalk);
 
 function createAudioContext() {
-  audioContext = new AudioContext({sampleRate: 12000});
+  audioContext = new AudioContext({sampleRate: 12100});
 }
 
 async function startAudio() {
@@ -87,7 +87,8 @@ socket.on('audioStream', async (data) => {
     // const float32Array = data.audio;
 
     // Convert Float32Array to AudioBuffer
-    const audioBuffer = audioContext.createBuffer(1, float32Array.length, audioContext.sampleRate);
+    // const audioBuffer = audioContext.createBuffer(1, float32Array.length, audioContext.sampleRate);
+    const audioBuffer = audioContext.createBuffer(1, 16384, audioContext.sampleRate);
     audioBuffer.getChannelData(0).set(float32Array);
 
     // Create an audio buffer source node
